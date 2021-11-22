@@ -1,0 +1,845 @@
+@font-face {font-family: Arvo; src: url('../fonts/Arvo-Regular.ttf');}
+@font-face {font-family: Helvetica; src: url('../fonts/HelveticaNeueW23forSKY-Reg.ttf');} 
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Helvetica;
+    --main-bg: #444;
+    --main-color: #e3b55e;
+}
+
+/* -- Header -- */
+
+header {
+    position: fixed;
+    top: 0;
+    right: 0;
+    overflow-y: scroll;
+    height: 100vh;
+    background: var(--main-bg) !important;
+    width: 250px;
+    box-shadow: 1px 1px 10px rgba(0,0,0,0.4);
+}
+
+header .logo {
+    width: 150px;
+    display: block;
+    margin: 10px auto;
+    border-radius: 10px;
+}
+
+header .navbar {
+    width: 100%;
+    height: 100%;
+    display: block;
+    padding: 0 !important;
+}
+
+header .navbar-nav {
+    display: block;
+    width: 100%;
+}
+
+header .navbar-nav > li.lang {
+    font-family: Arvo;
+}
+
+header .navbar-nav > li > a {
+    padding: 15px 0;
+}
+
+header .navbar-nav > li a {
+    color: #fff;
+    margin-right: 10px;
+    transition: all 0.5s ease-in-out;
+}
+
+header .navbar-nav > li a:hover {
+    color: #ccc;
+    text-decoration: none;
+}
+
+header .navbar-nav > li a svg {
+    margin-left: 5px
+}
+
+header .navbar-nav > li ul {
+    padding: 15px;
+    background: #555;
+    list-style: none;
+}
+
+header .navbar-nav > li ul li {
+    margin-right: 15px;
+    font-size: 14px;
+}
+
+header .navbar-nav > li.active > a {
+    color: var(--main-color);
+}
+
+.page-wrapper {
+    width: calc(100% - 250px);
+    margin-right: 250px;
+    padding: 50px;
+    min-height: 100vh;
+    background: #f2f2f2;
+}
+
+#menu-btn {
+    width: 50px;
+    margin: 10px;
+    padding: 0 8px;
+    border-radius: 5px;
+    background: none;
+    outline: none;
+    border: 0;
+}
+
+#menu-btn {
+    display: none;
+}
+
+#menu-btn span {
+    display: block;
+    border-radius: 5px;
+    border-bottom: 2px solid #fff;
+    margin: 7px 0;
+    opacity: 1;
+    transition: all 0.5s ease-in-out;
+    transform: none;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 99;
+    display: none;
+}
+
+@media (max-width: 991px) {
+    header {
+        width: 70px;
+        z-index: 999;
+        transition: all 0.5s ease-in-out;
+    }
+    header .logo {
+        width: 60px;
+        margin: 10px 5px;
+    }
+    .page-wrapper {
+        width: calc(100% - 70px);
+        margin-right: 70px;
+        padding: 25px 0;
+    }
+
+    header .navbar-nav li {
+        position: relative;
+    }
+    
+    header .navbar-nav > li .link {
+        display: none;
+        position: absolute;
+        top: 13px;
+        margin-right: 10px;
+        opacity: 0;
+        font-size: 13px;
+        transition: all 0.5s ease-in-out;
+    }
+    header .navbar-nav > li ul li {
+        margin-right: 0;
+    }
+    header .navbar-nav > li a {
+        margin-right: 15px;
+    }
+    header .navbar-nav > li > a {
+        margin-right: 25px;
+        padding: 10px 0;
+    }
+    header .navbar-nav > li ul li .link {
+        top: 0;
+    }
+    header .navbar-nav > li > a ul {
+        padding: 10px 15px;
+    }
+
+    header.open {
+        width: 200px;
+    }
+
+    #menu-btn {
+        display: block;
+    }
+
+    header.open #menu-btn span:nth-child(1) {
+        transform: rotate(45deg) translateY(6px) translateX(4px);
+    }
+
+    header.open #menu-btn span:nth-child(2) {
+        opacity: 0;
+    }
+
+    header.open #menu-btn span:nth-child(3) {
+        transform: rotate(-45deg) translatex(7px) translateY(-8px);
+    }
+
+    header.open .navbar-nav > li .link {
+       display: inline;
+       opacity: 1;
+       animation: links-show 1s ease-in-out;
+    }
+
+}
+
+@keyframes links-show {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* -- ./Header -- */
+
+/* -- Main Title -- */
+.main-title {
+    font-size: 16px;
+    color: #444;
+    font-weight: bold;
+    margin-bottom: 25px;
+}
+.main-title a {
+    float: left;
+    font-size: 14px;
+    color: #444;
+    font-weight: normal;
+}
+.main-title a:hover {
+    text-decoration: underline !important;
+    color: #444;
+}
+/* -- ./Main Title -- */
+
+/* -- Dashboard -- */
+
+.info-box {
+    padding: 15px;
+    border: 1px solid #e1e1e1;
+    background: #fff;
+    margin-bottom: 15px;
+    box-shadow: 1px 1px 10px rgba(0,0,0,0.1);
+}
+
+.info-box > svg {
+    width: 50px !important;
+    height: 50px;
+    padding: 7px;
+    border-radius: 50%;
+    background: var(--main-bg);
+    color: #fff;
+    transition: all 0.5s ease-in-out;
+    border: 2px solid var(--main-bg);
+}
+
+.info-box:hover > svg {
+    color: var(--main-bg);
+    background: #fff;
+}
+
+.info-box p {
+    float: left;
+    font-size: 16px;
+    font-weight: bold;
+    color: #444
+}
+
+.info-box p span {
+    display: block;
+    text-align: center;
+    font-size: 35px;
+}
+
+.info-box ul {
+    padding: 0;
+    margin: 0;
+    margin-top: 60px;
+    margin-right: 10px;
+    display: block;
+    list-style: none;
+}
+
+.info-box ul li {
+    display: inline-block;
+    margin-left: 15px;
+    margin-bottom: 10px;
+}
+
+.info-box ul li a {
+    background: var(--main-bg);
+    display: block;
+    padding: 5px 10px;
+    border-radius: 10px;
+    border: 1px solid var(--main-bg);
+    color: #fff;
+    font-size: 14px;
+    transition: all 0.5s ease-in-out;
+}
+
+.info-box ul li a:hover {
+    color: var(--main-bg);
+    background: #fff;
+    text-decoration: none;
+    box-shadow: 1px 1px 10px rgba(0,0,0,0.4);
+}
+
+@media (max-width: 767px) {
+    .info-box > svg {
+        width: 30px !important;
+        height: 30px;
+        padding: 3px;
+    }
+    .info-box p {
+        font-size: 13px;
+    }
+    .info-box p span {
+        font-size: 18px;
+    }
+    .info-box ul li {
+        display: block;
+        text-align: center;
+    }
+    .info-box ul li a {
+        padding: 5px;
+        font-size: 13px;
+    }
+}
+
+/* -- ./Dashboard -- */
+
+/* -- Guides -- */
+
+.guide-block {
+    background: #fff;
+    border: 1px solid #e1e1e1;
+    box-shadow: 1px 1px 10px rgba(0,0,0,0.1);
+    padding: 15px;
+    margin-bottom: 15px;
+}
+
+.guide-block img {
+    height: 170px;
+    max-width: 100%;
+    margin: 0 auto 15px;
+    display: block;
+}
+
+.guide-block span {
+    display: block;
+    text-align: center;
+    margin-bottom: 15px
+}
+
+.guide-block span svg {
+    margin-left: 5px;
+    color: #aaa;
+}
+
+.guide-block ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.guide-block ul li {
+    margin-left: 10px;
+    display: inline-block;
+}
+
+.guide-block ul li a,
+.guide-block ul li button {
+    padding: 5px;
+    width: 35px;
+    height: 35px;
+    display: block;
+    text-align: center;
+    border-radius: 10px;
+    border: 1px solid var(--main-bg);
+    background: var(--main-bg);
+    color: #fff;
+    text-decoration: none;
+    position: relative;
+    transition: all 0.5s ease-in-out;
+}
+
+.guide-block ul li a:hover {
+    background: #fff;
+    color: var(--main-bg);
+}
+
+.guide-block ul li button {
+    background: #f00;
+    border: 1px solid #f00;
+}
+
+.guide-block ul li button:hover {
+    background: #fff;
+    color: #f00;
+}
+
+.guide-block ul li a .hint {
+    position: absolute;
+    /* top: 0; */
+    font-size: 12px;
+    background: #444;
+    color: #fff !important;
+    white-space: nowrap;
+    padding: 2px;
+    border-radius: 5px;
+    opacity: 0;
+    bottom: -50px;
+    right: 0;
+    transition: all .5s ease-in-out;
+}
+
+.guide-block ul li a:hover .hint {
+    opacity: .8;
+    bottom: -40px;
+}
+
+/* -- ./Guides -- */
+
+/* -- Add Guide -- */
+
+.clear {
+    clear: both;
+}
+
+form.form-group .group {
+  display: block;
+  margin: 10px 0;
+  padding: 0 5px;
+}
+
+form.form-group .group.two {
+    float: right;
+    width: 50%;
+    padding: 0 10px;
+}
+
+form.form-group .group span.text-danger {
+    display: block;
+    margin-bottom: 10px;
+}
+
+form.form-group .group label {
+  color: #999;
+  font-size: 14px;
+  display: block;
+  margin-left: 10px;
+}
+
+form.form-group .group label .require {
+    color: #d00;
+    font-size: 20px;
+}
+
+form.form-group .group label svg {
+  margin-top: 10px;
+}
+
+form.form-group .group label .required {
+  color: #db4437;
+  margin-left: 5px;
+}
+
+form.form-group .group input,
+form.form-group .group textarea,
+form.form-group .group select {
+  display: block;
+  border-radius: 10px;
+  padding: 10px;
+  border: 1px solid #e1e1e1;
+  width: 100%;
+  outline: none;
+  transition: all 0.5s ease-in-out;
+}
+
+form.form-group .group .radio-choices input[type='radio'],
+form.form-group .group .radio-choices input[type='checkbox']  {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+}
+
+form.form-group .group textarea {
+    resize: none;
+    height: 200px;
+}
+
+form.form-group .group .radio-choices {
+    display: inline-block;
+    padding: 0;
+}
+
+form.form-group .group .radio-choices li {
+    display: inline-block;
+    position: relative;
+    margin: 0 10px;
+    margin-bottom: 15px;
+}
+
+form.form-group .group .radio-choices li span {
+    display: inline-block;
+    border-radius: 5px;
+    border: 1px solid #e1e1e1;
+    padding: 5px 10px;
+    background: #fff;
+    transition: all 0.5s ease-in-out;
+}
+
+form.form-group .group .radio-choices li input:hover +  span {
+    border-color: var(--main-bg);
+}
+
+form.form-group .group .radio-choices li input:checked + span {
+    border: 1px solid var(--main-bg);
+    color: #fff;
+    background: var(--main-bg);
+}
+
+form.form-group .group textarea {
+    height: 150px;
+    resize: none;
+}
+
+form.form-group .group input:focus,
+form.form-group .group textarea:focus,
+form.form-group .group select:focus {
+    border-color: var(--main-bg);
+}
+
+form.form-group .group button {
+    display: block;
+    padding: 5px 10px;
+    outline: none;
+    width: 150px;
+    margin: 20px auto 0;
+    border: 1px solid var(--main-bg);
+    background: var(--main-bg);
+    color: #fff;
+    cursor: pointer;
+    border-radius: 10px;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.4);
+    transition: all 0.5s ease-in-out;
+}
+
+form.form-group .group button svg {
+    margin-left: 5px;
+}
+
+form.form-group .group button:hover {
+  background: #fff;
+  color: var(--main-bg);
+}
+
+form.form-group .choices input,
+form.form-group .choices textarea {
+    display: inline-block;
+    width: calc(50% - 8px);
+}
+
+form.form-group .choices input:last-child,
+form.form-group .choices textarea:last-child {
+    margin-right: 10px;
+}
+
+form.form-group .checkbox {
+    position: relative;
+    display: inline-block;
+    margin-left: 5px;
+    margin-bottom: 10px;
+}
+
+form.form-group .checkbox span {
+    display: block;
+    border: 1px solid #e1e1e1;
+    border-radius: 10px;
+    padding: 5px 10px;
+    text-align: center;
+    background: #fff;
+    font-size: 14px;
+    transition: all 0.5s ease-in-out;
+}
+
+form.form-group  input[type="checkbox"],
+form.form-group  input[type="radio"] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+}
+  
+form.form-group  input[type="checkbox"]:checked + span,
+form.form-group  input[type="radio"]:checked + span {
+    border-color: var(--main-bg);
+    background: var(--main-bg);
+    color: #fff;
+}
+
+form.form-group input::placeholder,
+form.form-group textarea::placeholder,
+form.form-group select::placeholder {
+    color: #ccc !important;
+    font-size: 14px;
+}
+
+form.form-group {
+    background: #fff;
+    padding: 15px;
+    border: 1px solid #e1e1e1;
+    box-shadow: 1px 1px 10px rgba(0,0,0,0.1);
+}
+
+form.form-group .delete-btn {
+    display: inline-block !important;
+    background: #d00 !important;
+    width: auto !important;
+    border-color: #d00 !important;
+    text-align: center;
+    padding: 5px 15px 5px 10px !important;
+}
+form.form-group .delete-btn:hover {
+    background: #fff !important;
+    color: #d00 !important;
+}
+
+form.form-group .user-img {
+    position: relative;
+    margin-bottom: 15px;
+}
+
+form.form-group .user-img img {
+    display: block;
+    margin-right: 25px;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+}
+
+form.form-group .user-img .file-box {
+    position: absolute; 
+    bottom: -5px;
+    right: 55px;
+    background: #fff;
+    width: 35px;
+    height: 35px;
+    text-align: center;
+    line-height: 35px;
+    border-radius: 50%;
+    border: 2px solid var(--main-bg);
+    cursor: pointer;
+}
+
+form.form-group .user-img .file-box input {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: 10;
+    opacity: 0;
+    cursor: pointer;
+}
+
+@media (max-width: 767px) {
+    form.form-group .group.two {
+        float: none;
+        width: 100%;
+        padding: 0;
+    }
+    form.form-group .choices input,
+    form.form-group .choices textarea {
+        width: 100%;
+        display: block;
+        margin: 10px 0 0 !important;
+    }
+}
+
+/* -- ./Add Guide -- */
+
+/* -- Login -- */
+
+.login form {
+    width: 500px;
+    background: #fff;
+
+}
+
+.login {
+    background: #f2f2f2;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login form h3 {
+    color: #d8b63e;
+    text-align: center;
+    font-size: 22px;
+    margin-bottom: 20px;
+}
+
+@media (max-width: 767px) {
+    .login form {
+        width: 300px;
+    }
+}
+
+/* -- ./Login -- */
+
+.small-img {
+    display: block;
+    width: 200px;
+    max-width: 100%;
+}
+
+/* -- Message -- */
+
+.message-box {
+    position: fixed;
+    z-index: 99999;
+    top: 15px;
+    left: 15px;
+    padding: 5px 15px;
+    font-size: 15px;
+    color: #fff;
+    border-radius: 15px;
+    background: #209420;
+    box-shadow: 1px 1px 10px rgba(0,0,0,0.3);
+    opacity: 0;
+    visibility: hidden;
+}
+
+.message-box.done {
+    animation: showmsg 4s ease-in-out;
+}
+
+@keyframes showmsg {
+    0% {
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    25% {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    75% {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    100% {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+/* -- ./Message -- */
+
+/* -- Modal -- */
+
+.modal .modal-title {
+    color: #444;
+}
+
+.modal form input {
+    display: block;
+    width: 100%;
+    border: 1px solid #e1e1e1;
+    margin-bottom: 15px;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.modal form button {
+    padding: 2px 10px;
+    border-radius: 5px;
+    background: var(--main-bg);
+    color: #fff;
+    border: 1px solid var(--main-bg);
+    outline: none;
+    margin-left: 10px;
+    cursor: pointer;
+    transition: all 0.5s ease-in-out;
+}
+
+.modal form button[type="submit"] {
+    background: #d00;
+    border: 1px solid #d00;
+}
+
+.modal form button:hover {
+    background: transparent;
+    color: var(--main-bg);
+}
+
+.modal form button[type="submit"]:hover {
+    color: #d00;
+}
+
+/* -- ./Modal -- */
+
+/* -- pagination -- */
+
+.pagination {
+    margin-top: 25px;
+}
+
+.pagination span,
+.pagination a {
+    margin-left: 5px;
+    background: #fff !important;
+    color: #444 !important;
+    border: 1px solid #444 !important;
+}
+
+.pagination span,
+.pagination a:hover {
+    background: #444 !important;
+    color: #fff !important;
+}
+
+.pagination span.page-link {
+    cursor: not-allowed !important;
+}
+
+/* -- ./pagination -- */
+
+/* -- About us -- */
+.about-img {
+    width: 250px;
+}
+/* -- ./About us -- */
