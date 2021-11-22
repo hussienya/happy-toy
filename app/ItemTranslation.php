@@ -8,5 +8,5 @@ use Astrotomic\Translatable\Translatable;
 
 class ItemTranslation extends Model
 {
-    public $fillable = ['name','description','size','source','contents','country','brand'];
+    public $fillable = ['title','description','subtitle'];
 }

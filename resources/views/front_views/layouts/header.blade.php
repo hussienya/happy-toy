@@ -79,9 +79,7 @@
                                             @endforeach
                                         </ul>
                                     </li>
-                                    {{-- <li><a href="{{ url('/contact') }}">اتصل بنا</a></li> --}}
-                                    <li><a href="{{ route(Route::currentRouteName(),'ar') }}">العربية</a></li>
-                                    <li><a href="{{ route(Route::currentRouteName(),'en') }}">English</a></li>  
+                                    <li><a href="{{ url('/contact') }}">اتصل بنا</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -115,7 +113,7 @@
                                                 document.getElementById('logout-form').submit();">
                                                 تسجيل الخروج
                                             </a>
-                                            <form id="logout-form" action="{{ route('logout', app()->getLocale()) }}" method="POST" style="display: none;">
+                                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                                 @csrf
                                             </form>
                                         </li>
@@ -200,7 +198,6 @@
                                 </ul>
                             </li>
                             <li><a href="{{ url('/contact') }}">اتصل بنا</a></li>
-                            
                         </ul>
                     </nav>
                 </div>
@@ -219,7 +216,7 @@
                                 تسجيل الخروج
                             </span>
                         </a>
-                        <form id="logout-form" action="{{ route('logout', app()->getLocale()) }}" method="POST" style="display: none;">
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                             @csrf
                         </form>
                         @else
@@ -263,10 +260,10 @@
         <div class="inner-popup">
 
             <ul class="titles-list">
-                <li data-value="login-form" class="active">{{__('تسجيل الدخول')}} <span>/</span> </li>
+                <li data-value="login-form" class="active">تسجيل الدخول <span>/</span> </li>
                 <li data-value="register-form">إنشاء حساب</li>
             </ul>
-            <form method="POST" action="{{ route('login', app()->getLocale())}}" class="login-form">
+            <form method="POST" action="{{ route('login') }}" class="login-form">
                 @csrf
 
                 <div class="form-cell">
@@ -313,7 +310,7 @@
                 </div>
             </form>
             
-            <form method="POST" action="{{ route('register', app()->getLocale()) }}" class="register-form">
+            <form method="POST" action="{{ route('register') }}" class="register-form">
                 @csrf
 
                 <div class="form-cell">

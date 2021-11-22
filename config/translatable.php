@@ -11,7 +11,8 @@ return [
     |
     */
     'locales' => [
-        'ar'
+        'ar',
+        'en'
     ],
 
     /*

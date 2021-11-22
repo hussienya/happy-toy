@@ -15,7 +15,7 @@
                     <!-- Header Logo End -->
                     <div class="col-12 col-sm-6 col-lg-3 mb-8">
                         <div class="single-footer-widget">
-                            <h1 class="widget-title">{{__('من نحن')}}</h1>
+                            <h1 class="widget-title">من نحن</h1>
                             <p class="desc-content">متجر إلكتروني متخصص ببيع ألعاب الأطفال</p>
                             <!-- Soclial Link Start -->
                             <div class="widget-social justify-content-start mb-n2">

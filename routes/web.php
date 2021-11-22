@@ -13,11 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-
 Route::get('/', 'IndexController@index')->name('home');
-    
-
-
 Route::get('/products','ItemController@index');
 Route::get('/category/{id}','ItemController@item');
 Route::get('/product/{id}','ItemController@single');
@@ -79,8 +75,7 @@ Route::namespace("Admin")->prefix('admin')->group(function(){
 	});
 });
 // Route::get('/admin','AdminController@create');
-
+Auth::routes();
 Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
 
 
-Auth::routes();

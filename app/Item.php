@@ -12,13 +12,24 @@ class Item extends Model
 {
     use Translatable;
     protected $table = 'items';
-    protected $fillable = ['price','count','new_price','real_price','vendor_name','code','age','youtube_link'];
-    public $translatedAttributes = ['name','description','size','source','contents','country','brand'];
+    protected $fillable = ['count','price','new_price','real_price','count','maker'];
+    public $translatedAttributes = ['title','description','subtitle'];
 
     public function categories(){
         return $this->belongsToMany('App\Category');
     }
-
+    public function Size(){
+        return $this->belongsToMany('App\Size');
+    }
+    public function Color(){
+        return $this->belongsToMany('App\Color');
+    }
+    public function Type(){
+        return $this->belongsToMany('App\Type');
+    }
+    public function brand(){
+        return $this->belongsToMany('App\Item');
+    }
     public function images(){
         return $this->hasMany('App\ItemImage');
     }

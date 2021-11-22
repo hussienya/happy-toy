@@ -148,14 +148,14 @@
                                                 <span class="price">
                                                     <span class="new">
                                                         @if ($item->new_price != NULL)
-                                                            {{ $item->new_price }} {{__('جنيه')}}
+                                                            {{ $item->new_price }} جنيه
                                                         @else
-                                                            {{ $item->price }} {{__('جنيه')}}
+                                                            {{ $item->price }} جنيه
                                                         @endif
                                                     </span>
                                                     @if ($item->new_price != NULL)
                                                     <span class="old">
-                                                        {{ $item->price }} {{__('جنيه')}}
+                                                        {{ $item->price }} جنيه
                                                     </span>
                                                     @endif
                                                 </span>
@@ -255,14 +255,14 @@
                                                         <span class="price">
                                                             <span class="new">
                                                                 @if ($item->new_price != NULL)
-                                                                    {{ $item->new_price }} {{__('جنيه')}}
+                                                                    {{ $item->new_price }} جنيه
                                                                 @else
-                                                                    {{ $item->price }} {{__('جنيه')}}
+                                                                    {{ $item->price }} جنيه
                                                                 @endif
                                                             </span>
                                                             @if ($item->new_price != NULL)
                                                             <span class="old">
-                                                                {{ $item->price }} {{__('جنيه')}}
+                                                                {{ $item->price }} جنيه
                                                             </span>
                                                             @endif
                                                         </span>
@@ -333,14 +333,14 @@
                                                         <span class="price">
                                                             <span class="new">
                                                                 @if ($item->new_price != NULL)
-                                                                    {{ $item->new_price }} {{__('جنيه')}}
+                                                                    {{ $item->new_price }} جنيه
                                                                 @else
-                                                                    {{ $item->price }} {{__('جنيه')}}
+                                                                    {{ $item->price }} جنيه
                                                                 @endif
                                                             </span>
                                                             @if ($item->new_price != NULL)
                                                             <span class="old">
-                                                                {{ $item->price }} {{__('جنيه')}}
+                                                                {{ $item->price }} جنيه
                                                             </span>
                                                             @endif
                                                         </span>
@@ -467,20 +467,20 @@
                                 </span>
                                 <span class="rating-num">(4)</span>
                             </span>
-                             Rating End -->
+                            <!-- Rating End -->
 
                             <!-- Price Box Start -->
                             <div class="price-box mb-2">
                                 <span class="regular-price">
                                     @if ($item->new_price != NULL)
-                                        {{ $item->new_price }} {{__('جنيه')}}
+                                        {{ $item->new_price }} جنيه
                                     @else
-                                        {{ $item->price }} {{__('جنيه')}}
+                                        {{ $item->price }} جنيه
                                     @endif
                                 </span>
                                 @if ($item->new_price != NULL)
                                 <span class="price">
-                                    <del>{{ $item->price }} {{__('جنيه')}}</del>
+                                    <del>{{ $item->price }} جنيه</del>
                                 </span>
                                 @endif
                             </div>
